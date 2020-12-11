@@ -1,0 +1,21 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Customer Login </title>
+</head>
+<body>
+{% block body_block %}
+<br>
+<center>
+<h2 style="color:#FF4C33">Digital Agriculture Management System</h2>
+<img src="/media/CustomerCare_Header-2.png"  width="300" height="300">
+    <p style="color:#0B0302">You can purchase the best and most nutritious products from this website</p>
+    <p style="color:#0B0302">click Login Button and Purchase Product</p>
+ <a href="{% url 'App_Login:login' %}" class="btn btn-primary">Login</a>
+</center>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Farmer Login</title>
+</head>
+<body>
+
+<center>
+<br>
+<h2 style="color:#FF4C33">Digital Agriculture Management System</h2>
+<img src="/media/images.jpeg"  width="300" height="300">
+<img src="/media/image1.jpeg"  width="300" height="300">
+    <p style="color:#0B0302">You have come to the right place to sell your product</p>
+    <p style="color:#0B0302">click Login Button and Continue</p>
+<h2>Login:</h2>
+<table class="table">
+    <tr>
+        <td><label for="id_username">Username</label></td>
+        <td><input id="id_username" name="username"
+                   type="text" class="form-control"></td>
+    </tr>
+    <tr>
+        <td><label for="id_password">Password</label></td>
+        <td><input id="id_password" name="password"
+                   type="password" class="form-control"></td>
+    </tr>
+</table>
+
+    <a href="{% url 'App_Farmer:farmer-home' %}"><button type="submit" class="btn btn-success btn-sm">  LOG IN </button></a>
+
+
+<br>
+<p>Doesn't have an account? <a href="{% url 'App_Farmer:farmer-signup' %}">Sing Up Here</a></p>
+</center>
+</body>
+</html>

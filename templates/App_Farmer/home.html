@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Agriculture Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123322969-2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-123322969-2');
+	</script>
+
+	<style>
+
+		#logo{
+		}
+
+		body{
+			background-color: #ebeff5;
+		}
+
+
+		#total-orders{
+			background-color: #4cb4c7;
+		}
+
+
+		#orders-delivered{
+			background-color: #7abecc;
+		}
+
+		#orders-pending{
+			background-color: #7CD1C0;
+		}
+
+
+
+
+	</style>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ <div class="container">
+	  <a href="{% url 'App_Farmer:farmer-home' %}"><button type="submit" class="btn btn-success btn-sm">Dashboard</button></a>
+      <a href="{% url 'App_Farmer:Product-create' %}"><button type="submit" class="btn btn-success btn-sm">  Product </button></a>
+      <a href="{% url 'App_Farmer:farmer-article' %}" ><button type="submit" class="btn btn-success btn-sm"> Article </button></a>
+      <a href="{% url 'App_Farmer:post-create' %}" ><button type="submit" class="btn btn-success btn-sm"> Post </button></a>
+      <a href="{% url 'App_Farmer:farmer-profile' %}" ><button type="submit" class="btn btn-success btn-sm"> Create Profile </button></a>
+      <a href="{% url 'App_Farmer:farmer-view-profile' %}" ><button type="submit" class="btn btn-success btn-sm">  View Profile </button></a>
+     <a href="{% url 'App_Shop:home' %}" ><button type="submit" class="btn btn-success btn-sm">Log out</button></a>
+ 	 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+ 	 aria-expanded="false" aria-label="Toggle navigation">
+ 	 	<span class="navbar-toggler-icon"></span>
+    </button>
+ </div>
+</nav>
+<br>
+
+<br>
+
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="total-orders">
+			  	<div class="card-header">
+			  		<h5 class="card-title" style="color:#E81919">Total Orders</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title" style="color:#E89A19">0</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-delivered">
+			  	<div class="card-header">
+			  		<h5 class="card-title" style="color:#E81919">Orders Delivered</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title" style="color:#E89A19">0</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-pending">
+			  	<div class="card-header">
+			  		<h5 class="card-title" style="color:#E81919">Orders Pending</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title" style="color:#E89A19">0</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<br>
+<br>
+
+<div class="row">
+	<div class="col-md-5">
+		<h5>CUSTOMERS:</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="prevent-submit btn btn-primary  btn-sm btn-block" href="">Create Customer</a>
+			<table class="table table-sm">
+				<tr>
+					<th></th>
+					<th>Customer</th>
+					<th>Phone</th>
+				</tr>
+
+					<tr>
+						<td><a class="btn btn-sm btn-info" href="/customer/2/">View</a></td>
+						<td>Peter Piper</td>
+						<td>555.232.1251</td>
+					</tr>
+
+					<tr>
+						<td><a class="btn btn-sm btn-info" href="/customer/4/">View</a></td>
+						<td>John Doe</td>
+						<td>555.864.2828</td>
+					</tr>
+
+
+			</table>
+		</div>
+	</div>
+
+	<div class="col-md-7">
+		<h5>LAST 5 ORDERS</h5>
+		<hr>
+		<div class="card card-body">
+
+			<table class="table table-sm">
+				<tr>
+					<th>Product</th>
+					<th>Date Orderd</th>
+					<th>Status</th>
+					<th>Update</th>
+					<th>Remove</th>
+				</tr>
+
+
+					<tr>
+						<td>Dishes</td>
+						<td>Dec. 3, 2019, 11:25 p.m.</td>
+						<td>Pending</td>
+						<td><a class="btn btn-sm btn-info" href="/update_order/3/">Update</a></td>
+
+						<td><a class="btn btn-sm btn-danger" href="/delete_order/3/">Delete</a></td>
+
+					</tr>
+
+					<tr>
+						<td>BBQ Grill</td>
+						<td>Dec. 13, 2019, 5:45 p.m.</td>
+						<td>Pending</td>
+						<td><a class="btn btn-sm btn-info" href="/update_order/11/">Update</a></td>
+
+						<td><a class="btn btn-sm btn-danger" href="/delete_order/11/">Delete</a></td>
+
+					</tr>
+
+					<tr>
+						<td>Dishes</td>
+						<td>Dec. 13, 2019, 6:14 p.m.</td>
+						<td>Out for delivery</td>
+						<td><a class="btn btn-sm btn-info" href="/update_order/14/">Update</a></td>
+
+						<td><a class="btn btn-sm btn-danger" href="/delete_order/14/">Delete</a></td>
+
+					</tr>
+
+					<tr>
+						<td>BBQ Grill</td>
+						<td>Dec. 16, 2019, 11 p.m.</td>
+						<td>Out for delivery</td>
+						<td><a class="btn btn-sm btn-info" href="/update_order/15/">Update</a></td>
+
+						<td><a class="btn btn-sm btn-danger" href="/delete_order/15/">Delete</a></td>
+
+					</tr>
+
+					<tr>
+						<td>Dishes</td>
+						<td>Dec. 17, 2019, 1:06 a.m.</td>
+						<td>Out for delivery</td>
+						<td><a class="btn btn-sm btn-info" href="/update_order/16/">Update</a></td>
+
+						<td><a class="btn btn-sm btn-danger" href="/delete_order/16/">Delete</a></td>
+
+					</tr>
+
+			</table>
+		</div>
+	</div>
+
+</div>
+<hr>
+
+
+</body>
+</html>
+

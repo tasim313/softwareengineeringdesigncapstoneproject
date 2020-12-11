@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Profile</title>
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/base.css">
+
+  <link rel="stylesheet" type="text/css" href="/static/admin/css/nav_sidebar.css">
+  <script src="/static/admin/js/nav_sidebar.js" defer></script>
+
+<link rel="stylesheet" type="text/css" href="/static/admin/css/forms.css">
+
+
+<script src="/admin/jsi18n/"></script>
+<script src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script src="/static/admin/js/jquery.init.js"></script>
+<script src="/static/admin/js/core.js"></script>
+<script src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script src="/static/admin/js/actions.js"></script>
+<script src="/static/admin/js/urlify.js"></script>
+<script src="/static/admin/js/prepopulate.js"></script>
+<script src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/static/admin/css/responsive.css">
+
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+<body>
+<br>
+<br>
+<h1  class="account-heading" style="color:#050505">Digital Agriculture Management System</h1>
+{% block body_block %}
+        {% for profile in profiles %}
+          <center>
+          <h1  class="account-heading" style="color:#050505">Profile Information</h1>
+          <br>
+          <div class="content-section">
+              <div class="media">
+                <img class="rounded-circle account-img" src="{{ profile.profile_pic.url }}">
+                 <div class="media-body">
+                    <h2 class="account-heading">{{ profile.username }}</h2>
+                     <p class="text-secondary">{{ profile.full_name }}</p>
+                     <p class="text-secondary">{{ profile.address_1 }}</p>
+                     <p class="text-secondary">{{ profile.city }}</p>
+                     <p class="text-secondary">{{ profile.zipcode }}</p>
+                     <p class="text-secondary">{{ profile.country }}</p>
+                     <p class="text-secondary">{{ profile.phone }}</p>
+                 </div>
+              </div>
+          </div>
+        <a href="{% url 'App_Farmer:farmer-home' %}"><button type="submit" class="btn btn-success btn-sm">  Back Home </button></a>
+        </center>
+        {% endfor %}
+{% endblock %}
+</body>
+</html>
