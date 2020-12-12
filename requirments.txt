@@ -30,6 +30,9 @@ urllib3==1.25.7
 whitenoise==5.2.0
 wrapt==1.11.2
 Python 3.8.6
+django
+gunicorn
+django-heroku
 # Dependencies for generating/publishing Python binaries.
 bob-builder==0.0.19
 
